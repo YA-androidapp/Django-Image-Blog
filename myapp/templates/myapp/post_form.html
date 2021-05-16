@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+{% load queryset %}
+{% block content %}
+
+<p>
+  <a class="btn btn-light" href="{% url 'myapp_Post_list' %}">
+    Post Listing
+  </a>
+</p>
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="published_at">published_at: </label>
+    <input class="form-control col-sm-10" id="published_at" type="datetime-local" name="published_at"
+      value="{{ object.published_at }}">
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="description">description: </label>
+    <input class="form-control col-sm-10" id="description" type="text" name="description"
+      value="{{ object.description }}">
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="is_public">is_public: </label>
+    <input class="form-control col-sm-10" id="is_public" type="text" name="is_public" value="{{ object.is_public }}">
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="title">title: </label>
+    <input class="form-control col-sm-10" id="title" type="text" name="title" value="{{ object.title }}">
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="updated_at">updated_at: </label>
+    <input class="form-control col-sm-10" id="updated_at" type="datetime-local" name="updated_at"
+      value="{{ object.updated_at }}">
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="content">content: </label>
+    <input class="form-control col-sm-10" id="content" type="text" name="content" value="{{ object.content }}">
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="created_at">created_at: </label>
+    <input class="form-control col-sm-10" id="created_at" type="datetime-local" name="created_at"
+      value="{{ object.created_at }}">
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="category">category: </label>
+    <select class="form-select col-sm-10" id="category" name="category">
+      {% for category in categories %}
+      {% if object.category.id == category.id %}
+      <option value="{{ category.id }}" selected>{{ category.name }} *</option>
+      {% else %}
+      <option value="{{ category.id }}">{{ category.name }}</option>
+      {% endif %}
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="tags">tags: </label>
+    <select class="form-select col-sm-10" multiple id="tags" name="tags">
+      {% for tag in tags %}
+      {% if object.tags|count_queryset_id:tag.id %}
+      <option value="{{ tag.id }}" selected>{{ tag.name }} *</option>
+      {% else %}
+      <option value="{{ tag.id }}">{{ tag.name }}</option>
+      {% endif %}
+      {% endfor %}
+    </select>
+  </div>
+
+  <!-- div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="post_images">images: </label>
+    <select class="form-select col-sm-10" multiple id="post_images" name="post_images">
+      {% for image in images %}
+      {% if object.post_images.all|count_queryset_id:image.id %}
+      <option value="{{ image.id }}" selected>{{ image.title }} *</option>
+      {% else %}
+      <option value="{{ image.id }}">{{ image.title }}</option>
+      {% endif %}
+      {% endfor %}
+    </select>
+  </div -->
+
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

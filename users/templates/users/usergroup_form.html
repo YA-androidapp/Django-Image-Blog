@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<p>
+  <a class="btn btn-light" href="{% url 'users_UserGroup_list' %}">
+    UserGroup Listing
+  </a>
+</p>
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="uuid">uuid: </label>
+    <input class="form-control col-sm-10" id="uuid" type="text" name="uuid" value="{{ object.uuid }}">
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="name">name: </label>
+    <input class="form-control col-sm-10" id="name" type="text" name="name" value="{{ object.name }}">
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="username">username: </label>
+    <input class="form-control col-sm-10" id="username" type="text" name="username" value="{{ object.username }}">
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="is_staff">is_staff: </label>
+    <input class="form-control col-sm-10" id="is_staff" type="text" name="is_staff" value="{{ object.is_staff }}">
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="date_joined">date_joined: </label>
+    <input class="form-control col-sm-10" id="date_joined" type="datetime-local" name="date_joined"
+      value="{{ object.date_joined }}">
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="last_name">last_name: </label>
+    <input class="form-control col-sm-10" id="last_name" type="text" name="last_name" value="{{ object.last_name }}">
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="first_name">first_name: </label>
+    <input class="form-control col-sm-10" id="first_name" type="text" name="first_name" value="{{ object.first_name }}">
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="email">email: </label>
+    <input class="form-control col-sm-10" id="email" type="text" name="email" value="{{ object.email }}">
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<p>
+    <a class="btn btn-light" href="{% url 'users_UserGroup_list' %}">
+        UserGroup Listing
+    </a>
+</p>
+
+<table class="table">
+    <tr>
+        <td>uuid</td>
+        <td>{{ object.uuid }}</td>
+    </tr>
+    <tr>
+        <td>name</td>
+        <td>{{ object.name }}</td>
+    </tr>
+    <tr>
+        <td>username</td>
+        <td>{{ object.username }}</td>
+    </tr>
+    <tr>
+        <td>is_staff</td>
+        <td>{{ object.is_staff }}</td>
+    </tr>
+    <tr>
+        <td>date_joined</td>
+        <td>{{ object.date_joined }}</td>
+    </tr>
+    <tr>
+        <td>last_name</td>
+        <td>{{ object.last_name }}</td>
+    </tr>
+    <tr></tr>
+    <td>first_name</td>
+    <td>{{ object.first_name }}</td>
+    </tr>
+    <tr>
+        <td>email</td>
+        <td>{{ object.email }}</td>
+    </tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}

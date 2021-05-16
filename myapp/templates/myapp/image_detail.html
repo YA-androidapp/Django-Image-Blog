@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bin2img %}
+{% block content %}
+
+<p>
+    <a class="btn btn-light" href="{% url 'myapp_Image_list' %}">
+        Image Listing
+    </a>
+</p>
+
+<table class="table">
+    <tr>
+        <td>last_updated</td>
+        <td>{{ object.last_updated }}</td>
+    </tr>
+    <tr>
+        <td>created</td>
+        <td>{{ object.created }}</td>
+    </tr>
+    <tr>
+        <td>title</td>
+        <td>{{ object.title }}</td>
+    </tr>
+    <tr>
+        <td>image</td>
+        <td>
+            <a href="{{ object.image.url }}">
+                <img src="{{ object.image.url }}" class="img-thumbnail">
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td>binary</td>
+        <td>
+            {% if object.binary %}
+            <img src="data:image/png;base64,{{object.binary|bin2img}}" class="img-thumbnail">
+            {% endif %}
+        </td>
+    </tr>
+
+    <tr>
+        <td>post</td>
+        <td>
+            <a href="{{object.post.get_absolute_url}}">
+                {{ object.post.title }}
+            </a>
+        </td>
+    </tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}

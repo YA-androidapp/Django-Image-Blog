@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="m-2"><h4>myapp</h4></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'myapp_Tag_list' %}">Tag Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'myapp_Post_list' %}">Post Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'myapp_File_list' %}">File Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'myapp_Image_list' %}">Image Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'myapp_Category_list' %}">Category Listing</a></div>
+<div class="m-2"><h4>users</h4></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'users_UserGroup_list' %}">UserGroup Listing</a></div>
+{% endblock %}

@@ -1,0 +1,23 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'myapp_Post_list' %}">
+    Post Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>published_at</td><td>{{ object.published_at }}</td></tr>
+    <tr><td>description</td><td>{{ object.description }}</td></tr>
+    <tr><td>is_public</td><td>{{ object.is_public }}</td></tr>
+    <tr><td>title</td><td>{{ object.title }}</td></tr>
+    <tr><td>updated_at</td><td>{{ object.updated_at }}</td></tr>
+    <tr><td>content</td><td>{{ object.content }}</td></tr>
+    <tr><td>created_at</td><td>{{ object.created_at }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}

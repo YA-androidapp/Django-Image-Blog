@@ -16,10 +16,17 @@ class TagAdmin(admin.ModelAdmin):
     list_display = [
         "name",
         "slug",
+<<<<<<< HEAD
         "created_at",
     ]
     readonly_fields = [
         "created_at",
+=======
+        "timestamp",
+    ]
+    readonly_fields = [
+        "timestamp",
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1
         # "slug",
         # "name",
     ]
@@ -116,10 +123,17 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = [
         "name",
         "slug",
+<<<<<<< HEAD
         "created_at",
     ]
     readonly_fields = [
         # "created_at",
+=======
+        "timestamp",
+    ]
+    readonly_fields = [
+        # "timestamp",
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1
         "name",
         "slug",
     ]

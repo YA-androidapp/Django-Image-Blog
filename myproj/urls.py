@@ -17,12 +17,19 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
 
+<<<<<<< HEAD
 from django.conf.urls.static import static
 from django.conf import settings
 
+=======
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1
 urlpatterns = [
     path('', TemplateView.as_view(template_name='index.html'), name='index'),
     path('myapp/', include('myapp.urls')),
     path('users/', include('users.urls')),
     path('admin/', admin.site.urls),
+<<<<<<< HEAD
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+=======
+]
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1

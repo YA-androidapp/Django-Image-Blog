@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
@@ -8,10 +9,24 @@
   </a>
 </p>
 
+=======
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'myapp_File_list' %}">
+    File Listing
+    </a>
+</p>
+    
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1
 <form method="post" enctype="multipart/form-data">
   {% csrf_token %}
   {{form.errors}}
   <div class="form-group row">
+<<<<<<< HEAD
     <label class="col-sm-2 col-form-label" for="title">title: </label>
     <input class="form-control col-sm-10" id="title" type="text" name="title" value="{{ object.title }}">
   </div>
@@ -32,6 +47,26 @@
     <label class="col-sm-2 col-form-label" for="last_updated">last_updated: </label>
     <input class="form-control col-sm-10" id="last_updated" type="datetime-local" name="last_updated"
       value="{{ object.last_updated }}" disabled>
+=======
+  <label class="col-sm-2 col-form-label" for="title">title: </label>
+  <input class="form-control col-sm-10" id="title" type="text" name="title" value="{{ object.title }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="file">file: </label>
+  <input class="form-control col-sm-10" id="file" type="file" name="file" value="{{ object.file }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="created">created: </label>
+  <input class="form-control col-sm-10" id="created" type="datetime-local" name="created" value="{{ object.created }}" disabled>
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="last_updated">last_updated: </label>
+  <input class="form-control col-sm-10" id="last_updated" type="datetime-local" name="last_updated" value="{{ object.last_updated }}" disabled>
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="binary">binary: </label>
+  <input class="form-control col-sm-10" id="binary" type="text" name="binary" value="{{ object.binary }}">
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1
   </div>
   <input type="submit" value="Save" class="btn btn-primary">
 </form>

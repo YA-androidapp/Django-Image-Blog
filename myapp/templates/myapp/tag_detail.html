@@ -2,15 +2,25 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1
 <p>
     <a class="btn btn-light" href="{% url 'myapp_Tag_list' %}">
     Tag Listing
     </a>
 </p>
+<<<<<<< HEAD
 
 <table class="table">
     <tr><td>created_at</td><td>{{ object.created_at }}</td></tr>
+=======
+    
+<table class="table">
+    <tr><td>timestamp</td><td>{{ object.timestamp }}</td></tr>
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1
     <tr><td>slug</td><td>{{ object.slug }}</td></tr>
     <tr><td>name</td><td>{{ object.name }}</td></tr>
 </table>

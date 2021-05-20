@@ -1,3 +1,7 @@
 {
+<<<<<<< HEAD
     "python.pythonPath": "myenv/bin/python3"
+=======
+    "python.pythonPath": "myenv\\Scripts\\python.exe"
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1
 }

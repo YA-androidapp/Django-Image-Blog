@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends "base.html" %}
 {% block content %}
 {% for object in object_list %}
@@ -9,3 +10,13 @@
 {% endfor %}
 <div><a class="btn btn-primary" href="{% url 'myapp_Image_create' %}">Create a new Image</a></div>
 {% endblock %}
+=======
+
+{% extends "base.html" %}
+{% block content %}
+{% for object in object_list %}
+  <div class="m-2"><a href="{{object.get_absolute_url}}">{{object}}</a></div>
+{% endfor %}
+<div><a class="btn btn-primary" href="{% url 'myapp_Image_create' %}">Create a new Image</a></div>
+{% endblock %}
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1

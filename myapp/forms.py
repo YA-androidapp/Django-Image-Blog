@@ -6,7 +6,11 @@ class TagForm(forms.ModelForm):
     class Meta:
         model = models.Tag
         fields = [
+<<<<<<< HEAD
             # "created_at",
+=======
+            # "timestamp",
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1
             "slug",
             "name",
         ]
@@ -54,7 +58,11 @@ class CategoryForm(forms.ModelForm):
     class Meta:
         model = models.Category
         fields = [
+<<<<<<< HEAD
             # "created_at",
+=======
+            # "timestamp",
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1
             "name",
             "slug",
         ]

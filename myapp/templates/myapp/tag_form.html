@@ -2,19 +2,32 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1
 <p>
     <a class="btn btn-light" href="{% url 'myapp_Tag_list' %}">
     Tag Listing
     </a>
 </p>
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1
 <form method="post" enctype="multipart/form-data">
   {% csrf_token %}
   {{form.errors}}
   <div class="form-group row">
+<<<<<<< HEAD
   <label class="col-sm-2 col-form-label" for="created_at">created_at: </label>
   <input class="form-control col-sm-10" id="created_at" type="datetime-local" name="created_at" value="{{ object.created_at }}">
+=======
+  <label class="col-sm-2 col-form-label" for="timestamp">timestamp: </label>
+  <input class="form-control col-sm-10" id="timestamp" type="datetime-local" name="timestamp" value="{{ object.timestamp }}">
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1
   </div>
   <div class="form-group row">
   <label class="col-sm-2 col-form-label" for="slug">slug: </label>

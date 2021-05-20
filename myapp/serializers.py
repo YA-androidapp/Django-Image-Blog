@@ -8,12 +8,19 @@ class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Tag
         fields = [
+<<<<<<< HEAD
             "created_at",
+=======
+            "timestamp",
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1
             "slug",
             "name",
         ]
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1
 class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -28,7 +35,10 @@ class PostSerializer(serializers.ModelSerializer):
             "created_at",
         ]
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1
 class FileSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -41,7 +51,10 @@ class FileSerializer(serializers.ModelSerializer):
             "binary",
         ]
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1
 class ImageSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -54,13 +67,20 @@ class ImageSerializer(serializers.ModelSerializer):
             "image",
         ]
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1
 class CategorySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Category
         fields = [
+<<<<<<< HEAD
             "created_at",
+=======
+            "timestamp",
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1
             "name",
             "slug",
         ]

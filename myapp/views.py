@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 from . import forms
 from . import models
 from django.views import generic
+=======
+from django.views import generic
+from . import models
+from . import forms
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1
 
 
 class TagListView(generic.ListView):
@@ -34,6 +40,7 @@ class PostCreateView(generic.CreateView):
     model = models.Post
     form_class = forms.PostForm
 
+<<<<<<< HEAD
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context.update({
@@ -43,6 +50,8 @@ class PostCreateView(generic.CreateView):
         })
         return context
 
+=======
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1
 
 class PostDetailView(generic.DetailView):
     model = models.Post
@@ -54,6 +63,7 @@ class PostUpdateView(generic.UpdateView):
     form_class = forms.PostForm
     pk_url_kwarg = "pk"
 
+<<<<<<< HEAD
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context.update({
@@ -63,6 +73,8 @@ class PostUpdateView(generic.UpdateView):
         })
         return context
 
+=======
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1
 
 class FileListView(generic.ListView):
     model = models.File
@@ -94,6 +106,7 @@ class ImageCreateView(generic.CreateView):
     model = models.Image
     form_class = forms.ImageForm
 
+<<<<<<< HEAD
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context.update({
@@ -101,6 +114,8 @@ class ImageCreateView(generic.CreateView):
         })
         return context
 
+=======
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1
 
 class ImageDetailView(generic.DetailView):
     model = models.Image
@@ -112,6 +127,7 @@ class ImageUpdateView(generic.UpdateView):
     form_class = forms.ImageForm
     pk_url_kwarg = "pk"
 
+<<<<<<< HEAD
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context.update({
@@ -119,6 +135,8 @@ class ImageUpdateView(generic.UpdateView):
         })
         return context
 
+=======
+>>>>>>> 609159725a8427956399f25bc6c3d39cc33898e1
 
 class CategoryListView(generic.ListView):
     model = models.Category
